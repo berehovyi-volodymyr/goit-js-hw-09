@@ -8,6 +8,8 @@ const ref = {
     body: document.querySelector('body')
 }
 
+let timerId = null;
+
 ref.btnStart.addEventListener('click', onStart)
 ref.btnStop.addEventListener('click', onStop)
 
