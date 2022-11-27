@@ -36,6 +36,9 @@ const timer = {
       const diff = date - currentTime;
       const time = convertMs(diff);
       updateTimer(time);
+       if (diff <= 1000) {
+        stopTimer(timerId);
+      }
     }, 1000);
   },
 };
@@ -75,4 +78,8 @@ function updateTimer({ days, hours, minutes, seconds }) {
 
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
+}
+
+function stopTimer(interval) {
+  clearInterval(interval);
 }
